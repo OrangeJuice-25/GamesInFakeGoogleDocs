@@ -1,0 +1,409 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+  background: #202124;
+  color: #e8eaed;
+}
+
+#app {
+  display: flex;
+  height: 100vh;
+}
+
+/* SIDEBAR */
+
+#sidebar {
+  width: 230px;
+  background: #171717;
+  border-right: 1px solid #303134;
+  padding: 12px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sidebar-header {
+  padding: 0 16px 8px 16px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #e8eaed;
+}
+
+.nav-item {
+  padding: 8px 16px;
+  color: #e8eaed;
+  cursor: pointer;
+  border-radius: 0 16px 16px 0;
+  font-size: 14px;
+}
+
+.nav-item:hover {
+  background: #303134;
+}
+
+.nav-item.active {
+  background: #1a73e8;
+}
+
+/* MAIN CONTENT */
+
+#mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #202124;
+}
+
+/* TOP BAR */
+
+#topBar {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  border-bottom: 1px solid #303134;
+  background: #202124;
+}
+
+#topbarTitle {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.back-btn {
+  margin-left: auto;
+  background: transparent;
+  border: none;
+  color: #e8eaed;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.back-btn:hover {
+  background: #303134;
+}
+
+/* VIEWS WRAPPER */
+
+#viewsWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* VIEWS */
+
+.view {
+  display: none;
+  padding: 16px;
+  overflow: auto;
+  flex: 1;
+}
+
+.view.active {
+  display: block;
+}
+
+.view-title {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+/* SECTIONS */
+
+.section {
+  margin-top: 16px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #bdc1c6;
+}
+
+/* BUTTONS */
+
+.pill-btn {
+  background: #303134;
+  border: none;
+  color: #e8eaed;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.pill-btn:hover {
+  background: #3c4043;
+}
+
+/* CARDS */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.card {
+  background: #303134;
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border: 1px solid transparent;
+}
+
+.card:hover {
+  border-color: #5f6368;
+}
+
+.card-icon {
+  font-size: 20px;
+}
+
+.card-title {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.card-meta {
+  font-size: 12px;
+  color: #9aa0a6;
+}
+
+/* LISTS */
+
+.list-column {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.list-item {
+  background: #303134;
+  border-radius: 8px;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.list-item:hover {
+  border: 1px solid #5f6368;
+}
+
+.list-main {
+  flex: 1;
+}
+
+.list-title {
+  font-size: 13px;
+}
+
+.list-sub {
+  font-size: 11px;
+  color: #9aa0a6;
+}
+
+.list-open-btn {
+  background: #1a73e8;
+  border: none;
+  color: #e8eaed;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.list-open-btn:hover {
+  background: #2b7de9;
+}
+
+/* EDITOR */
+
+.editor-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.editor-filename {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.editor-status {
+  margin-left: auto;
+  font-size: 12px;
+  color: #9aa0a6;
+}
+
+/* RIBBON */
+
+.ribbon {
+  display: flex;
+  gap: 12px;
+  padding: 8px 10px;
+  background: #171717;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.ribbon-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #bdc1c6;
+}
+
+.ribbon-group select,
+.ribbon-group button,
+.ribbon-group input[type="color"] {
+  font-size: 12px;
+  background: #303134;
+  border: 1px solid #5f6368;
+  color: #e8eaed;
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+
+.ribbon-group button {
+  cursor: pointer;
+}
+
+.ribbon-group button:hover {
+  background: #3c4043;
+}
+
+/* EDITOR AREA */
+
+.editor-area {
+  padding: 12px;
+  background: #303134;
+  border-radius: 8px;
+  min-height: 320px;
+  outline: none;
+}
+
+/* BROWSER MODE */
+
+.hidden {
+  display: none;
+}
+
+/* When browser mode is active, hide top bar and views, show browser */
+
+.browser-active #topBar {
+  display: none;
+}
+
+.browser-active #viewsWrapper {
+  display: none;
+}
+
+.browser-active #browserMode {
+  display: flex;
+}
+
+/* BROWSER MODE LAYOUT */
+
+#browserMode {
+  display: none;
+  flex-direction: column;
+  height: 100vh;
+  background: #202124;
+}
+
+/* TAB STRIP */
+
+#browserTabs {
+  display: flex;
+  align-items: center;
+  background: #171717;
+  border-bottom: 1px solid #303134;
+  padding: 4px;
+  gap: 4px;
+}
+
+.browser-tab {
+  display: flex;
+  align-items: center;
+  background: #202124;
+  border-radius: 8px 8px 0 0;
+  padding: 4px 8px;
+  min-width: 220px;
+  max-width: 360px;
+  border: 1px solid transparent;
+}
+
+.browser-tab.active {
+  background: #303134;
+  border-color: #4a4a4a;
+}
+
+.tab-lock {
+  margin-right: 6px;
+  font-size: 12px;
+}
+
+.tab-url-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #e8eaed;
+  font-size: 12px;
+  outline: none;
+}
+
+.tab-close {
+  margin-left: 6px;
+  background: transparent;
+  border: none;
+  color: #e8eaed;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.tab-close:hover {
+  color: #f28b82;
+}
+
+/* NEW TAB BUTTON */
+
+#newTabButton {
+  margin-left: 4px;
+  background: transparent;
+  border: none;
+  color: #e8eaed;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 4px 8px;
+  border-radius: 50%;
+}
+
+#newTabButton:hover {
+  background: #303134;
+}
+
+/* IFRAME */
+
+#browserFrame {
+  flex: 1;
+  border: none;
+  width: 100%;
+  background: #202124;
+}

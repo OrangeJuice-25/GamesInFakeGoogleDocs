@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Drive Clone + Browser Mode</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+
+    <!-- SIDEBAR -->
+    <div id="sidebar">
+      <div class="sidebar-header">Drive</div>
+
+      <div class="nav-item active" data-view="home">Home</div>
+      <div class="nav-item" data-view="mydrive">My Drive</div>
+      <div class="nav-item" data-view="shared">Shared</div>
+      <div class="nav-item" data-view="recent">Recent</div>
+
+      <!-- BROWSER BUTTON -->
+      <div class="nav-item" id="browserButton">Browser</div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="mainContent">
+
+      <!-- TOP BAR (HIDDEN IN BROWSER MODE) -->
+      <div id="topBar">
+        <div id="topbarTitle">Home</div>
+        <button id="backBtn" class="back-btn">← Back</button>
+      </div>
+
+      <!-- VIEWS WRAPPER (NORMAL DRIVE) -->
+      <div id="viewsWrapper">
+
+        <!-- HOME VIEW -->
+        <div id="view-home" class="view active">
+          <h2 class="view-title">Suggested</h2>
+
+          <div class="section">
+            <div class="section-header">
+              <span>Suggested folders</span>
+            </div>
+            <div id="homeFolders" class="card-grid"></div>
+          </div>
+
+          <div class="section">
+            <div class="section-header">
+              <span>Suggested files</span>
+            </div>
+            <div id="homeFiles" class="card-grid"></div>
+          </div>
+        </div>
+
+        <!-- MY DRIVE VIEW -->
+        <div id="view-mydrive" class="view">
+          <h2 class="view-title">My Drive</h2>
+          <div id="myDriveFiles" class="card-grid"></div>
+        </div>
+
+        <!-- SHARED VIEW -->
+        <div id="view-shared" class="view">
+          <h2 class="view-title">Shared with me</h2>
+          <div id="sharedFiles" class="card-grid"></div>
+        </div>
+
+        <!-- RECENT VIEW -->
+        <div id="view-recent" class="view">
+          <h2 class="view-title">Recent</h2>
+
+          <div class="section">
+            <div class="section-header">
+              <span>Recent files</span>
+              <button id="clearHistoryBtn" class="pill-btn">Clear history</button>
+            </div>
+            <div id="recentFiles" class="card-grid"></div>
+          </div>
+
+          <div class="section">
+            <div class="section-header">
+              <span>Recent URLs</span>
+            </div>
+            <div id="recentUrls" class="list-column"></div>
+          </div>
+        </div>
+
+        <!-- EDITOR VIEW -->
+        <div id="view-editor" class="view">
+          <div class="editor-header">
+            <div id="editorFilename" class="editor-filename">Untitled document</div>
+            <div id="editorStatus" class="editor-status">Saved</div>
+          </div>
+
+          <!-- RIBBON -->
+          <div class="ribbon">
+            <div class="ribbon-group">
+              <label>Font</label>
+              <select id="fontFamilySelect">
+                <option value="Arial">Arial</option>
+                <option value="Calibri">Calibri</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="Verdana">Verdana</option>
+              </select>
+              <select id="fontSizeSelect">
+                <option value="2">Small</option>
+                <option value="3" selected>Normal</option>
+                <option value="4">Large</option>
+                <option value="5">Huge</option>
+              </select>
+            </div>
+
+            <div class="ribbon-group">
+              <label>Style</label>
+              <select id="styleSelect">
+                <option value="p">Normal text</option>
+                <option value="h1">Heading 1</option>
+                <option value="h2">Heading 2</option>
+                <option value="h3">Heading 3</option>
+              </select>
+            </div>
+
+            <div class="ribbon-group">
+              <label>Text</label>
+              <button data-cmd="bold">B</button>
+              <button data-cmd="italic">I</button>
+              <button data-cmd="underline">U</button>
+            </div>
+
+            <div class="ribbon-group">
+              <label>Color</label>
+              <input type="color" id="fontColorInput" value="#ffffff">
+              <input type="color" id="highlightColorInput" value="#000000">
+            </div>
+          </div>
+
+          <!-- EDITOR AREA -->
+          <div id="editor" class="editor-area" contenteditable="true">
+            <p>Start writing your document here...</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ⭐ BROWSER MODE (CHROME-STYLE) ⭐ -->
+      <div id="browserMode" class="hidden">
+        <!-- TAB STRIP -->
+        <div id="browserTabs"></div>
+        <!-- FULLSCREEN IFRAME -->
+        <iframe id="browserFrame" src="about:blank"></iframe>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
